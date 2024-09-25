@@ -1,0 +1,65 @@
+/*Create a class named Fruit with a data member to calculate the number of fruits in a basket. Create two
+other class named Apples and Mangoes to calculate the number of apples and mangoes in the basket.
+Print the number of fruits of each type and the total number of fruits in the basket.(Inheritance)*/
+#include<iostream>
+using namespace std;
+class apple
+{
+protected:
+int no_of_apple;
+public:
+void getapple(){
+cout<<"enter no apple=";
+cin>>no_of_apple;
+}
+void displayapple()
+{
+cout<<"\nno of apple are="<<no_of_apple;
+}
+};
+class mango
+{
+protected:
+int no_of_mango;
+public:
+void getmango(){
+cout<<"enter no mango=";
+cin>>no_of_mango;
+}
+void displaymango()
+{
+cout<<"\nno of mango are="<<no_of_mango;
+}
+};
+class fruit:public mango,public apple
+{
+protected:
+int no_of_fruit;
+public:
+void getfruit(){
+getmango();
+getapple();
+no_of_fruit=no_of_mango+no_of_apple;
+}
+void displayfruit()
+{
+displaymango();
+displayapple();
+cout<<"\nno of fruit in basket are="<<no_of_fruit;
+}
+};
+main()
+{
+fruit f1;
+f1.getfruit();
+f1.displayfruit();
+}
+
+
+
+
+
+
+
+
+

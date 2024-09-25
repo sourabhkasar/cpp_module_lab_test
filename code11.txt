@@ -1,0 +1,40 @@
+/*Q.No. 1 Banking Record System.
+File handling has been effectively used for each feature of this project
+Operations  Add Record:  Show/List Data:  Search Record:  Edit Record:  Delete Record:*/
+
+#include<iostream>
+#include<fstream>
+using namespace std;
+main()
+{
+ofstream out;
+out.open("bank.txt");
+out<<"hi my name is pratik";\
+out<<"\nmy account no is 202402";
+out.close();
+string line;
+ifstream in;
+in.open("bank.txt");
+while(getline(in,line))
+{
+cout<<line<<endl;
+}
+in.close();
+char ch;
+ifstream inn;
+inn.open("bank.txt");
+int count=0;
+while(inn.get(ch))
+{
+if(ch>='0'&&ch<='9')
+{
+count++;
+}
+}
+cout<<"\nno of digits are="<<count;
+ofstream outt;
+outt.open("bank.txt",ios::app);
+outt<<"\ni want to withdraw a amount";
+outt.close();
+
+}
